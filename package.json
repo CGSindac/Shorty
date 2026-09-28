@@ -1,0 +1,27 @@
+{
+  "name": "shorty",
+  "version": "1.0.0",
+  "description": "A URL Shortener",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CGSindac/Shorty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CGSindac/Shorty/issues"
+  },
+  "homepage": "https://github.com/CGSindac/Shorty#readme",
+  "dependencies": {
+    "@astrojs/netlify": "^8.2.6",
+    "astro": "^7.3.5"
+  }
+}
