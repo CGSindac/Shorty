@@ -95,7 +95,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         if (data.status == 'ERROR')
           throw new Error("Invalid URL");
           
-        sign!.innerHTML = `https://shotrylink.netlify.app/${data.data.id}`;
+        sign!.innerHTML = `https://shotrylink.netlify.app/view/${data.data.id}`;
       } catch (err)
       {
         console.log(err);
