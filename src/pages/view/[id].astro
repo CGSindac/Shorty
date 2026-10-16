@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts//BaseLayout.astro";
+export const prerender = false;
+
+const { id } = Astro.params;
+
+async function getLink() {
+  try {
+    const req = await fetch(`https://shorters.calixgabriel093.workers.dev/api/link/${id}`);
+    const data = await req.json();
+    return data;
+  } catch (err) {
+    return {
+      status: "ERROR",
+      mssg: "Something went Wrong!",
+    };
+  }
+}
+
+// Get URL Data from server
+const req = await getLink();
+
+// Placehlder Values
+let message = "Your Link!";
+let link = "/view";
+
+if (req.status == "ERROR" || req.status == "NOT FOUND") {
+  message = "Could not retrieve data.";
+} else {
+  link = req.data.url;
+}
+console.log(req.data);
+---
+
+<!-- Component Below -->
+<BaseLayout>
+  <div class="view">
+    <a href={link}><button>Click to redirect!</button></a>
+    <h1>{message}</h1>
+  </div>
+</BaseLayout>
+
+<style></style>
