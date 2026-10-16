@@ -88,12 +88,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         )
 
         const data = await req.json();
+
+        console.log(data);
         
         // @ts-ignore
         if (data.status == 'ERROR')
           throw new Error("Invalid URL");
           
-        sign!.innerHTML = data.data.url;
+        sign!.innerHTML = `https://shotrylink.netlify.app/${data.data.id}`;
       } catch (err)
       {
         console.log(err);
